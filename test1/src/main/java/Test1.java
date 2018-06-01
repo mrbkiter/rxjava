@@ -9,6 +9,6 @@ public class Test1
     {
         List<String> list = Arrays.asList("1", "2", "3");
         Observable<String> observable = Observable.fromIterable(list);
-        observable.subscribe(s -> System.out.print(s));
+        observable.subscribe(s -> System.out.println("onNext:" + s), s -> System.out.println("on Error" + s), () -> System.out.println("OnComplete"));
     }
 }
